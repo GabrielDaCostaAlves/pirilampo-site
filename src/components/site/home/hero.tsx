@@ -69,7 +69,7 @@ export function Hero({ image }: { image: string }) {
 
           <motion.dl
             {...fade(0.32)}
-            className="mt-8 grid max-w-md grid-cols-3 gap-4 lg:mx-0 2xl:mt-12 2xl:gap-6"
+            className="mx-auto mt-8 grid max-w-md grid-cols-3 gap-4 lg:mx-0 2xl:mt-12 2xl:gap-6"
           >
             {[
               { n: "4 meses", l: "a 14 anos" },
