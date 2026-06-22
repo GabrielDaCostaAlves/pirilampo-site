@@ -13,24 +13,25 @@ export function Preloader() {
   const [phase, setPhase] = useState<Phase>("in");
 
   const fireflies = useMemo(() => {
+    // Valores arredondados: garante que servidor e cliente gerem strings
+    // idênticas (Math.sin pode variar nos últimos dígitos entre motores JS),
+    // evitando erro de hidratação.
+    const r2 = (n: number) => Math.round(n * 100) / 100;
     const rand = (seed: number) => {
       const x = Math.sin(seed * 12.9898) * 43758.5453;
-      return x - Math.floor(x);
+      return r2(x - Math.floor(x));
     };
-    return Array.from({ length: FIREFLY_COUNT }, (_, i) => {
-      const size = 3 + rand(i + 1) * 7;
-      return {
-        id: i,
-        left: rand(i + 11) * 100,
-        top: rand(i + 23) * 100,
-        size,
-        driftX: (rand(i + 31) - 0.5) * 90,
-        driftY: (rand(i + 43) - 0.5) * 90,
-        delay: rand(i + 57) * 1.6,
-        dur: 2.6 + rand(i + 67) * 2.6,
-        blink: 1.4 + rand(i + 79) * 1.8,
-      };
-    });
+    return Array.from({ length: FIREFLY_COUNT }, (_, i) => ({
+      id: i,
+      left: r2(rand(i + 11) * 100),
+      top: r2(rand(i + 23) * 100),
+      size: r2(3 + rand(i + 1) * 7),
+      driftX: r2((rand(i + 31) - 0.5) * 90),
+      driftY: r2((rand(i + 43) - 0.5) * 90),
+      delay: r2(rand(i + 57) * 1.6),
+      dur: r2(2.6 + rand(i + 67) * 2.6),
+      blink: r2(1.4 + rand(i + 79) * 1.8),
+    }));
   }, []);
 
   useIsoLayoutEffect(() => {
