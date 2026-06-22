@@ -29,7 +29,7 @@ export function Hero({ image }: { image: string }) {
     <section className="relative overflow-hidden aurora">
       <Fireflies count={18} />
 
-      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-12 px-5 pb-16 pt-12 sm:px-8 sm:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-8 lg:pb-28 lg:pt-20">
+      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-5 pb-12 pt-10 sm:px-8 sm:pt-12 sm:pb-14 lg:grid-cols-[1.05fr_1fr] lg:gap-8 lg:pb-16 lg:pt-14 2xl:pb-28 2xl:pt-20">
         {/* Texto */}
         <div className="relative z-10 text-center lg:text-left">
           <motion.span
@@ -42,21 +42,21 @@ export function Hero({ image }: { image: string }) {
 
           <motion.h1
             {...fade(0.08)}
-            className="text-balance text-4xl leading-[1.05] sm:text-5xl lg:text-6xl"
+            className="text-balance text-4xl leading-[1.05] sm:text-5xl lg:text-5xl 2xl:text-6xl"
           >
             <span className="glow-underline">{heroTitle}</span>
           </motion.h1>
 
           <motion.p
             {...fade(0.16)}
-            className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-ink-soft lg:mx-0"
+            className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-ink-soft lg:mx-0 lg:text-lg"
           >
             {heroSubtitle}
           </motion.p>
 
           <motion.div
             {...fade(0.24)}
-            className="mt-9 flex flex-col items-center gap-3 sm:flex-row lg:items-start lg:justify-start"
+            className="mt-6 flex flex-col items-center gap-3 sm:flex-row lg:items-start lg:justify-start 2xl:mt-9"
           >
             <EnrollButton size="lg" />
             <Button asChild variant="outline" size="lg">
@@ -69,7 +69,7 @@ export function Hero({ image }: { image: string }) {
 
           <motion.dl
             {...fade(0.32)}
-            className="mt-12 grid max-w-md grid-cols-3 gap-6 lg:mx-0"
+            className="mt-8 grid max-w-md grid-cols-3 gap-4 lg:mx-0 2xl:mt-12 2xl:gap-6"
           >
             {[
               { n: "4 meses", l: "a 14 anos" },

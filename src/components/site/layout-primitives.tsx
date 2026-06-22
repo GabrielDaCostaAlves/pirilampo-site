@@ -18,7 +18,7 @@ export function Section({
   ...props
 }: React.ComponentProps<"section">) {
   return (
-    <section className={cn("py-20 sm:py-28", className)} {...props} />
+    <section className={cn("py-14 sm:py-20 2xl:py-28", className)} {...props} />
   );
 }
 
@@ -49,7 +49,7 @@ export function SectionHeading({
           {eyebrow}
         </span>
       )}
-      <h2 className="text-balance text-3xl leading-tight sm:text-4xl md:text-[2.75rem]">
+      <h2 className="text-balance text-3xl leading-tight sm:text-4xl">
         {title}
       </h2>
       {description && (
