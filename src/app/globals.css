@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────
+   Escola Pirilampo — Design Tokens
+   Conceito: a luz do vaga-lume (pirilampo). Cores da marca em
+   superfícies claras e arejadas, com o amarelo como "brilho".
+   ───────────────────────────────────────────────────────────── */
+
+@theme {
+  /* Marca */
+  --color-sky: #6eb7e8;
+  --color-sky-deep: #3d92cf;
+  --color-blossom: #f8a3c5;
+  --color-blossom-deep: #ec6fa3;
+  --color-glow: #ffd45e;
+  --color-glow-deep: #f4b73a;
+  --color-cloud: #f6f7f9;
+  --color-ink: #21304a;
+  --color-ink-soft: #5a6b82;
+  --color-line: #e7ebf1;
+
+  /* Semânticos (estilo shadcn) */
+  --color-background: #ffffff;
+  --color-foreground: #21304a;
+  --color-muted: #f6f7f9;
+  --color-muted-foreground: #5a6b82;
+  --color-card: #ffffff;
+  --color-card-foreground: #21304a;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #21304a;
+  --color-primary: #6eb7e8;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f6f7f9;
+  --color-secondary-foreground: #21304a;
+  --color-accent: #fff4d6;
+  --color-accent-foreground: #21304a;
+  --color-destructive: #e2556b;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #e7ebf1;
+  --color-input: #e7ebf1;
+  --color-ring: #6eb7e8;
+
+  /* Tipografia */
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+
+  /* Raios suaves */
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.75rem;
+  --radius-3xl: 2.25rem;
+
+  /* Sombras macias / brilho */
+  --shadow-soft: 0 10px 40px -12px rgba(33, 48, 74, 0.18);
+  --shadow-glow: 0 0 60px -10px rgba(255, 212, 94, 0.55);
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv01";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-glow) 55%, white);
+    color: var(--color-ink);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--color-sky) 70%, white);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* Pílula de etiqueta usada nos "eyebrows" de seção */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-sky-deep);
+    background: color-mix(in srgb, var(--color-sky) 16%, white);
+  }
+
+  /* Sublinhado-brilho desenhado à mão sob títulos */
+  .glow-underline {
+    position: relative;
+    display: inline;
+    background-image: linear-gradient(
+      120deg,
+      color-mix(in srgb, var(--color-glow) 70%, white) 0%,
+      color-mix(in srgb, var(--color-glow) 70%, white) 100%
+    );
+    background-repeat: no-repeat;
+    background-position: 0 88%;
+    background-size: 100% 0.32em;
+    transition: background-size 0.4s var(--ease-soft);
+  }
+
+  /* Fundo arejado com manchas de cor da marca */
+  .aurora {
+    background:
+      radial-gradient(40% 50% at 12% 0%, color-mix(in srgb, var(--color-sky) 22%, white) 0%, transparent 60%),
+      radial-gradient(35% 45% at 92% 8%, color-mix(in srgb, var(--color-blossom) 22%, white) 0%, transparent 55%),
+      radial-gradient(45% 55% at 70% 100%, color-mix(in srgb, var(--color-glow) 18%, white) 0%, transparent 60%);
+  }
+
+}
+
+/* Animações */
+@keyframes float-firefly {
+  0%, 100% { transform: translate(0, 0); opacity: 0.35; }
+  25% { transform: translate(12px, -18px); opacity: 0.9; }
+  50% { transform: translate(-8px, -30px); opacity: 0.55; }
+  75% { transform: translate(-16px, -12px); opacity: 0.85; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.45; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.06); }
+}
+
+@keyframes blob-drift {
+  0%, 100% { border-radius: 42% 58% 63% 37% / 42% 38% 62% 58%; }
+  50% { border-radius: 58% 42% 37% 63% / 58% 62% 38% 42%; }
+}
+
+.firefly {
+  position: absolute;
+  border-radius: 999px;
+  background: radial-gradient(circle, #fff6d4 0%, var(--color-glow) 45%, transparent 70%);
+  box-shadow: 0 0 12px 2px color-mix(in srgb, var(--color-glow) 70%, transparent);
+  animation: float-firefly var(--dur, 9s) var(--ease-soft) infinite;
+  animation-delay: var(--delay, 0s);
+  pointer-events: none;
+}
+
+.animate-pulse-glow { animation: pulse-glow 5s var(--ease-soft) infinite; }
+.animate-blob { animation: blob-drift 14s var(--ease-soft) infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  html { scroll-behavior: auto; }
+}

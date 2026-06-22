@@ -1,0 +1,105 @@
+
+> escola-pirilampo@1.0.0 dev
+> next dev
+
+   ▲ Next.js 15.1.6
+   - Local:        http://localhost:3000
+   - Network:      http://172.26.0.1:3000
+   - Environments: .env.local, .env
+
+ ✓ Starting...
+ ✓ Ready in 2.4s
+ ○ Compiling / ...
+ ✓ Compiled / in 1783ms (1457 modules)
+ GET / 200 in 3221ms
+ ○ Compiling /sobre ...
+ ✓ Compiled /sobre in 833ms (1467 modules)
+ GET /sobre 200 in 1896ms
+ ✓ Compiled /segmentos in 309ms (1474 modules)
+ GET /segmentos 200 in 1140ms
+ ○ Compiling /projetos ...
+ ✓ Compiled /projetos in 547ms (1481 modules)
+ GET /projetos 200 in 1310ms
+ ○ Compiling /galeria ...
+ ✓ Compiled /galeria in 1134ms (1486 modules)
+ GET /galeria 200 in 1885ms
+ ○ Compiling /momentos ...
+ ✓ Compiled /momentos in 739ms (1494 modules)
+ GET /momentos 200 in 1502ms
+ ○ Compiling /contato ...
+ ✓ Compiled /contato in 652ms (1507 modules)
+ GET /contato 200 in 1441ms
+ ○ Compiling /admin/login ...
+ ✓ Compiled /admin/login in 1309ms (1682 modules)
+ GET /admin/login 200 in 1755ms
+ ○ Compiling /admin ...
+ ✓ Compiled /admin in 2.4s (1720 modules)
+ GET /admin 200 in 2860ms
+ GET /contato 200 in 2430ms
+ GET /projetos 200 in 3330ms
+ GET /momentos 200 in 5237ms
+ GET /segmentos 200 in 4786ms
+ GET /sobre 200 in 6025ms
+ GET /admin/login 200 in 2314ms
+ GET /galeria 200 in 4154ms
+ GET / 200 in 6708ms
+ ○ Compiling /icon.png ...
+ ✓ Compiled /icon.png in 4.4s (1075 modules)
+ GET /icon.png?b1190aad8479472c 200 in 1783ms
+ GET /icon.png?b1190aad8479472c 200 in 5134ms
+ GET /icon.png?b1190aad8479472c 200 in 2689ms
+ GET /icon.png?b1190aad8479472c 200 in 2521ms
+ GET /icon.png?b1190aad8479472c 200 in 2522ms
+ GET /icon.png?b1190aad8479472c 200 in 2052ms
+ GET /icon.png?b1190aad8479472c 200 in 1477ms
+ ✓ Compiled in 1318ms (1534 modules)
+ ✓ Compiled in 631ms (1534 modules)
+ ✓ Compiled /admin in 322ms (1019 modules)
+ GET /admin 200 in 964ms
+ ○ Compiling /admin/posts ...
+ ✓ Compiled /admin/posts in 1053ms (1696 modules)
+ GET /admin/posts 200 in 1491ms
+ ○ Compiling /admin/galeria ...
+ ✓ Compiled /admin/galeria in 670ms (1716 modules)
+ GET /admin/galeria 200 in 1051ms
+ ○ Compiling /admin/configuracoes ...
+ ✓ Compiled /admin/configuracoes in 763ms (1732 modules)
+ GET /admin/configuracoes 200 in 1096ms
+ ✓ Compiled /admin/posts/new in 517ms (1754 modules)
+ GET /admin/posts/new 200 in 948ms
+ GET /admin/configuracoes 200 in 59ms
+ GET /admin/posts/new 200 in 49ms
+ ○ Compiling /icon.png ...
+ ✓ Compiled /icon.png in 1403ms (1079 modules)
+ ✓ Compiled in 1ms (1079 modules)
+ ✓ Compiled in 0ms (1079 modules)
+ GET /admin/galeria 200 in 2704ms
+ GET /icon.png?b1190aad8479472c 200 in 5183ms
+ GET /icon.png?b1190aad8479472c 200 in 3516ms
+ GET /admin 200 in 6175ms
+ GET /admin/posts 200 in 5744ms
+ ✓ Compiled in 2.5s (704 modules)
+ GET /icon.png?b1190aad8479472c 200 in 136ms
+ ✓ Compiled in 643ms (704 modules)
+ GET /admin/galeria 200 in 218ms
+ GET /admin/galeria 200 in 29ms
+ GET /icon.png?b1190aad8479472c 200 in 16ms
+ GET /icon.png?b1190aad8479472c 200 in 12ms
+ ✓ Compiled in 366ms (704 modules)
+ ✓ Compiled in 281ms (704 modules)
+ GET /admin 200 in 48ms
+ GET /icon.png?b1190aad8479472c 200 in 7ms
+ ✓ Compiled in 264ms (704 modules)
+ GET /admin/configuracoes 200 in 96ms
+ GET /admin/galeria 200 in 289ms
+ GET /admin/posts/new 200 in 626ms
+ GET /admin/posts 200 in 617ms
+ GET /icon.png?b1190aad8479472c 200 in 64ms
+ GET /icon.png?b1190aad8479472c 200 in 105ms
+ GET /icon.png?b1190aad8479472c 200 in 8ms
+ GET /icon.png?b1190aad8479472c 200 in 20ms
+ ✓ Compiled in 462ms (704 modules)
+ ✓ Compiled in 427ms (704 modules)
+ ✓ Compiled in 288ms (704 modules)
+ ✓ Compiled in 613ms (1302 modules)
+ ✓ Compiled in 695ms (1302 modules)
