@@ -166,6 +166,136 @@
 .animate-pulse-glow { animation: pulse-glow 5s var(--ease-soft) infinite; }
 .animate-blob { animation: blob-drift 14s var(--ease-soft) infinite; }
 
+/* ─────────────────────────────────────────────────────────────
+   Abertura — "do crepúsculo ao amanhecer". Vaga-lumes acendem no
+   escuro, o nome brilha ao centro e a luz do dia revela o site.
+   Aparece só na primeira visita da sessão (ver Preloader).
+   ───────────────────────────────────────────────────────────── */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.preloader[data-phase="out"] {
+  animation: pl-lift 0.6s var(--ease-soft) forwards;
+}
+@keyframes pl-lift {
+  to { opacity: 0; transform: translateY(-2%); visibility: hidden; }
+}
+
+.preloader__sky {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 90% at 50% 118%, color-mix(in srgb, var(--color-glow) 24%, transparent) 0%, transparent 55%),
+    linear-gradient(180deg, #131e31 0%, #1c2b45 55%, var(--color-ink) 100%);
+}
+
+.preloader__fireflies { position: absolute; inset: 0; }
+.preloader__firefly {
+  position: absolute;
+  border-radius: 999px;
+  background: radial-gradient(circle, #fff6d4 0%, var(--color-glow) 45%, transparent 70%);
+  box-shadow: 0 0 14px 3px color-mix(in srgb, var(--color-glow) 65%, transparent);
+  opacity: 0;
+  animation:
+    pl-drift var(--dur, 3s) var(--ease-soft) infinite alternate,
+    pl-blink var(--blink, 2s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+@keyframes pl-drift {
+  from { transform: translate(0, 0); }
+  to { transform: translate(var(--dx), var(--dy)); }
+}
+@keyframes pl-blink {
+  0%, 100% { opacity: 0.12; }
+  50% { opacity: 0.95; }
+}
+
+.preloader__center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.preloader__beacon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 240px;
+  height: 240px;
+  transform: translate(-50%, -58%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--color-glow) 55%, transparent) 0%, transparent 65%);
+  filter: blur(10px);
+  animation: pl-beacon 2.6s var(--ease-soft) infinite;
+}
+@keyframes pl-beacon {
+  0%, 100% { opacity: 0.45; transform: translate(-50%, -58%) scale(0.9); }
+  50% { opacity: 0.85; transform: translate(-50%, -58%) scale(1.08); }
+}
+.preloader__mark {
+  position: relative;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-size: clamp(2.4rem, 9vw, 4.25rem);
+  color: #fffdf5;
+  text-shadow: 0 0 34px color-mix(in srgb, var(--color-glow) 60%, transparent);
+  opacity: 0;
+  animation: pl-rise 0.9s var(--ease-soft) 0.25s forwards;
+}
+.preloader__sub {
+  position: relative;
+  margin-top: 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.36em;
+  text-indent: 0.36em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-sky) 20%, white);
+  text-shadow: 0 0 22px color-mix(in srgb, var(--color-sky) 65%, transparent);
+  opacity: 0;
+  animation: pl-rise 0.9s var(--ease-soft) 0.5s forwards;
+}
+@keyframes pl-rise {
+  from { opacity: 0; transform: translateY(16px); filter: blur(6px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+.preloader__dawn {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, #ffffff 0%, #ffffff 32%, transparent 72%);
+  opacity: 0;
+  pointer-events: none;
+}
+.preloader[data-phase="out"] .preloader__dawn {
+  animation: pl-dawn 0.6s var(--ease-soft) forwards;
+}
+@keyframes pl-dawn {
+  from { opacity: 0; transform: scale(0.55); }
+  to { opacity: 1; transform: scale(1.7); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader__firefly {
+    animation: none;
+    opacity: 0.5;
+  }
+  .preloader__beacon { animation: none; opacity: 0.7; }
+  .preloader__mark,
+  .preloader__sub {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

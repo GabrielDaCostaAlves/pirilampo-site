@@ -3,6 +3,7 @@ import { Footer } from "@/components/site/footer";
 import { WhatsappFab } from "@/components/site/whatsapp-fab";
 import { SettingsProvider } from "@/components/site/settings-provider";
 import { StructuredData } from "@/components/site/structured-data";
+import { Preloader } from "@/components/site/preloader";
 import { getSettings } from "@/lib/firestore";
 
 export const revalidate = 60;
@@ -16,6 +17,7 @@ export default async function SiteLayout({
 
   return (
     <SettingsProvider value={settings}>
+      <Preloader />
       <StructuredData settings={settings} />
       <div className="flex min-h-dvh flex-col">
         <Navbar />
