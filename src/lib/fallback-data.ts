@@ -1,22 +1,14 @@
 import type { GalleryImage, Post } from "./types";
 
-/** Imagens ilustrativas (Unsplash) — todas verificadas e relacionadas a
- *  escola, crianças e educação. Substitua pelo conteúdo real da escola no
- *  painel administrativo: os dados do Firestore têm prioridade. */
 const img = (id: string, w = 1200) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
 
-// Menina sorrindo com tinta no rosto — alegria da infância.
 export const HERO_IMAGE = img("photo-1503454537195-1dcabb73ffb9", 1400);
 
 export const SEGMENT_IMAGES: Record<string, string> = {
-  // Bebê/criança pequena — creche.
-  creche: img("photo-1485546246426-74dc88dec4d9"),
-  // Criança brincando com blocos coloridos — maternal.
+  creche: img("photo-1508882747552-5bd783c3f581"),
   maternal: img("photo-1541692641319-981cc79ee10a"),
-  // Criança em atividade de artes — educação infantil.
   "educacao-infantil": img("photo-1516627145497-ae6968895b74"),
-  // Sala de aula com estudantes — ensino fundamental.
   "ensino-fundamental": img("photo-1509062522246-3755977927d7"),
 };
 
