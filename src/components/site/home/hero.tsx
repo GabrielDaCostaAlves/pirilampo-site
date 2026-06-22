@@ -29,7 +29,7 @@ export function Hero({ image }: { image: string }) {
     <section className="relative overflow-hidden aurora">
       <Fireflies count={18} />
 
-      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-5 pb-12 pt-10 sm:px-8 sm:pt-12 sm:pb-14 lg:grid-cols-[1.05fr_1fr] lg:gap-8 lg:pb-16 lg:pt-14 2xl:pb-28 2xl:pt-20">
+      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-5 pb-12 pt-10 sm:px-8 sm:pt-12 sm:pb-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:pb-10 lg:pt-10 2xl:pb-28 2xl:pt-20">
         {/* Texto */}
         <div className="relative z-10 text-center lg:text-left">
           <motion.span
@@ -103,13 +103,13 @@ export function Hero({ image }: { image: string }) {
             aria-hidden
             className="animate-pulse-glow absolute -inset-6 rounded-[3rem] bg-glow/30 blur-2xl"
           />
-          <div className="animate-blob relative overflow-hidden border-4 border-white shadow-[0_30px_80px_-30px_rgba(33,48,74,0.45)]">
+          <div className="animate-blob relative overflow-hidden border-4 border-white shadow-[0_30px_80px_-30px_rgba(33,48,74,0.45)] lg:h-[clamp(340px,62vh,560px)]">
             <Image
               src={image}
               alt="Crianças felizes aprendendo na Escola Pirilampo"
               width={720}
               height={820}
-              className="aspect-[4/5] h-full w-full object-cover"
+              className="aspect-[4/5] h-full w-full object-cover lg:aspect-auto"
               priority
               sizes="(max-width: 1024px) 100vw, 45vw"
             />
